@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Skylite 简翼模拟飞行平台</title>
+	<link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+	<div class="auth-container">
+		<h2>404, Not Found</h2>
+        <h2>没关系，您可以点击下方按钮返回主页哦！</h2>
+		<div class="auth-actions">
+			<a href="./index.html" class="auth-btn">返回主页</a>
+		</div>
+	</div>
+
+<footer class="ICP">
+	<a href="#">关于我们</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://space.bilibili.com/3546862944520868" target="_blank" rel="noopener noreferrer">社交媒体</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://qm.qq.com/q/ib6CewJj9e" target="_blank" rel="noopener noreferrer">加入我们</a>&nbsp;&nbsp; | &nbsp;&nbsp;Copyright © 2025 Skylite Development Team. All rights reserved.&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">桂ICP备2025057216号-1</a>&nbsp;&nbsp; | &nbsp;&nbsp;仅供模拟飞行使用
+</footer>
+
+</body>
+
+<script>
+// Cookie Consent Logic
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${value};expires=${d.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+    const arr = document.cookie.split(';');
+    for (let i = 0; i < arr.length; i++) {
+        let c = arr[i].trim();
+        if (c.indexOf(name + "=") === 0) return c.substring(name.length + 1);
+    }
+    return null; // 返回 null 而不是空字符串
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+    if (!getCookie('cookie_consent')) {
+        document.getElementById('cookie-consent').style.display = 'block';
+    }
+    
+    const acceptBtn = document.getElementById('cookie-accept-btn');
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+            setCookie('cookie_consent', '1', 365);
+            document.getElementById('cookie-consent').style.display = 'none';
+        });
+    }
+});
+</script>
+</html>

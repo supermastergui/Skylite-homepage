@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Skylite 简翼模拟飞行平台</title>
+	<link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+	<!-- Cookie Consent Banner -->
+	<div id="cookie-consent" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:999;background:rgba(255,255,255,0.98);box-shadow:0 -2px 12px rgba(0,0,0,0.08);padding:18px 0;text-align:center;">
+		<span style="color:#333;font-size:1rem;">
+			本网站使用Cookie以提升用户体验。继续浏览即表示您同意我们的 <a href="#" style="color:#1e62d0;text-decoration:underline;">Cookie政策</a>。
+		</span>
+		<button id="cookie-accept-btn" style="margin-left:24px;padding:6px 22px;font-size:1rem;color:#fff;background:#1e62d0;border:none;border-radius:18px;cursor:pointer;">同意</button>
+	</div>
+
+<nav class="navbar">
+		<img src="../img/Skylite_Portrait 3.png" alt="Logo">
+			<a href="../index.html">主页</a>
+		<div class="dropdown">
+			<a href="#">关于我们</a>
+			<div class="dropdown-content">
+				<a href="../Social-media/index.html"">官方社媒</a>
+				<a href="../meeting/"">会议记录</a>
+				<a href="../staff/"">职员</a>
+				<a href="../Skylite_Logo.7z" target="_blank" rel="noopener noreferrer">Logo下载</a>
+				<a href="https://pilot.skylitefly.com/ActivityList" target="_blank" rel="noopener noreferrer">活动</a>
+				<hr class="navbar-divider">
+				<a href="#"">Cookie协议</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<a href="#">运行</a>
+			<div class="dropdown-content">
+				<a href="https://www.vatprc.net/zh-cn/airspace/fir" target="_blank" rel="noopener noreferrer">空域</a>
+				<a href="https://www.vatprc.net/zh-cn/airspace/rvsm" target="_blank" rel="noopener noreferrer">RVSM高度层</a>
+				<a href="https://www.vatprc.net/zh-cn/airspace/sop" target="_blank" rel="noopener noreferrer">标准运行程序</a>
+				<a href="https://www.vatprc.net/zh-cn/controller/loa" target="_blank" rel="noopener noreferrer">移交协议书</a>
+				<a href="https://www.vatprc.net/zh-cn/airspace/vfr" target="_blank" rel="noopener noreferrer">目视飞行规则</a>
+
+			</div>
+		</div>
+		<div class="dropdown">
+			<a href="#">实用工具</a>
+			<div class="dropdown-content">
+				<a href="https://www.eaipchina.cn/" target="_blank" rel="noopener noreferrer">航图</a>
+				<a href="../weather/index.html">气象</a>
+				<a href="#">连飞软件下载</a>
+			</div>
+		</div><div class="dropdown">
+			<a href="#">管制员</a>
+			<div class="dropdown-content">
+				<a href="#">(开发中)管制员中心</a>
+				<a href="#">成为管制员</a>
+				<a href="https://skylitefly.feishu.cn/sheets/UDZssElIphLd5itygBIcD2xGn6c" target="_blank" rel="noopener noreferrer">管制员列表</a>
+				<a href="../Sector/index.html">扇区文件</a>
+			</div>
+		</div>
+	</nav>
+	<hr class="navbar-divider">
+	<main>
+    <h1>1. 隐私政策 (Privacy Policy)</h1>
+    
+    <h2>引言</h2>
+    我们重视用户的隐私，并承诺保护您的个人信息。请阅读本隐私政策，了解我们如何收集、使用和保护您的数据。
+
+    <p>
+    1. 我们收集的个人信息<br>
+
+    姓名、邮箱、电话号码、地址等。<br>
+
+    浏览器类型、IP地址、访问时间等。<br><br>
+
+    2. 我们如何使用您的信息<br>
+
+    为了向您提供服务。<br>
+
+    用于改善用户体验、分析网站性能、个性化内容等。<br>
+
+    向您发送营销信息（仅在您同意的情况下）。<br><br>
+
+    3. 信息共享与披露<br>
+    我们不会将您的个人信息出售给第三方，但可能会在以下情况下分享：<br>
+
+    与业务合作伙伴共享，提供更好的服务。<br>
+
+    应法律要求，向相关机构提供信息。<br><br>
+
+    4. 如何保护您的信息<br>
+    我们采取了合理的技术和管理措施，以防止信息泄露、丢失或被非法访问。<br><br>
+
+    5. 您的权利<br>
+
+    您有权查看、更正或删除您的个人数据。<br>
+
+    您可以随时取消订阅我们的营销邮件。<br><br>
+
+    6. Cookie<br>
+    我们使用 Cookie 来改善用户体验和分析数据。您可以选择禁用 Cookie，但可能会影响网站功能。<br><br>
+
+    7. 更新和修改<br>
+    我们可能会不时更新隐私政策，修改后的政策会在本页面上公布。<br><br>
+
+    8. 联系方式<br>
+    如果您有任何问题或需要更多信息，请通过以下方式联系我们：<br><br>
+
+     电话：400 1516 156<br>
+
+    <h1>2. 服务条款 (Terms of Service)</h1><br>
+    <h2>引言</h2>
+    欢迎访问本网站。通过访问或使用本网站，您同意遵守以下服务条款。如果您不同意这些条款，请不要使用本网站。<br><br>
+
+    1. 网站使用<br>
+
+    您同意遵守所有适用的法律法规。<br>
+
+    您不得从事任何非法、恶意、侵害他人权利的行为。<br><br>
+
+    2. 用户账户<br>
+
+    您可能需要创建账户才能使用某些功能。您有责任保持账户信息的准确性和安全性。<br>
+
+    您同意对所有账户活动承担责任。<br><br>
+
+    3. 内容使用<br>
+
+    网站内容，包括但不限于文本、图片、视频、商标等，受版权保护。<br>
+
+    除非得到授权，您不得复制、修改或分发这些内容。<br><br>
+
+    4. 第三方链接<br>
+
+    网站可能包含第三方网站的链接。我们不对这些网站的内容或隐私政策负责。<br><br>
+
+    5. 免责声明<br>
+
+    本网站按“现有状态”提供，不对任何错误、遗漏或中断承担责任。<br>
+
+    我们不对因使用网站而导致的任何直接或间接损失负责。<br><br>
+
+    6. 修改和终止<br>
+
+    我们有权随时修改或终止网站的部分或全部服务。<br>
+
+    我们保留在任何时候中断或终止您的账户使用权限的权利。<br><br>
+
+    7. 法律适用<br>
+
+    本协议受[法律名称]的管辖。<br><br>
+
+    8. 联系方式
+    如果您对本服务条款有任何疑问，请联系我们：<br>
+
+    电话：400 1516 156<br>
+
+    <h1>3. 免责声明 (Disclaimer)</h1>
+    <h2>引言</h2>
+    本网站的所有信息仅供参考。我们不对因使用本网站信息而引起的任何损失或责任负责。<br><br>
+
+    1. 信息准确性<br>
+    我们力求提供准确的信息，但不保证所有内容的准确性、完整性或适用性。用户应自行验证信息的准确性。<br><br>
+
+    2. 第三方内容<br>
+    本网站可能包含第三方链接或内容，但我们不对这些内容的准确性、合法性或任何相关的损失负责。<br><br>
+
+    3. 使用风险<br>
+    用户在使用本网站的所有内容和服务时，需自行承担风险。我们不对由于网站使用或访问引起的任何损失负责。<br><br>
+
+    4. 修改和更新<br>
+    我们保留随时修改、更新或删除网站内容的权利，且不对修改或删除的内容承担责任。<br><br>
+
+    5. 法律适用<br>
+    本免责声明受[法律名称]的管辖，任何争议应提交至[法院名称]。<br><br>
+
+    6. 联系方式
+    如有任何问题，请联系我们：<br><br>
+
+    电话：400 1516 156<br>
+    </p>
+	</main>
+
+	
+
+	<footer class="ICP">
+		<a href="#">关于我们</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://space.bilibili.com/3546862944520868" target="_blank" rel="noopener noreferrer">社交媒体</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://qm.qq.com/q/ib6CewJj9e" target="_blank" rel="noopener noreferrer">加入我们</a>&nbsp;&nbsp; | &nbsp;&nbsp;Copyright © 2025 Skylite Development Team. All rights reserved.&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">桂ICP备2025057216号-1</a>&nbsp;&nbsp; | &nbsp;&nbsp;仅供模拟飞行使用
+	</footer>
+</body>
+<script>
+// Cookie Consent Logic
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${value};expires=${d.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+    const arr = document.cookie.split(';');
+    for (let i = 0; i < arr.length; i++) {
+        let c = arr[i].trim();
+        if (c.indexOf(name + "=") === 0) return c.substring(name.length + 1);
+    }
+    return null; // 返回 null 而不是空字符串
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+    if (!getCookie('cookie_consent')) {
+        document.getElementById('cookie-consent').style.display = 'block';
+    }
+    
+    const acceptBtn = document.getElementById('cookie-accept-btn');
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+            setCookie('cookie_consent', '1', 365);
+            document.getElementById('cookie-consent').style.display = 'none';
+        });
+    }
+});
+</script>
+</html>

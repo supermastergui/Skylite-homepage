@@ -107,7 +107,7 @@ hr.navbar-divider {
 }
 
 .auth-container {
-    width: 340px;
+    width: 500px;
     margin: 80px auto 0 auto;
     background: #fff;
     border-radius: 16px;
@@ -542,4 +542,120 @@ hr.navbar-divider {
     background: #000;
     display: block;
     margin: 0 auto;
+}
+
+/* 
+表格样式优化：紧凑 + 居中 + 限宽
+table {
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+主体内容居中、增加左右间距
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+} */
+
+
+/* 主体内容居中、增加左右间距 */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+    line-height: 1.75;
+    color: #333;
+    font-size: 1.05rem;
+    font-family: "Helvetica Neue", "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+/* 段落美化 */
+main p {
+    margin-bottom: 1.2em;
+    color: #444;
+}
+
+/* 标题层级样式优化 */
+main h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e62d0;
+    text-align: center;
+    margin: 1.5em 0 1em;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e62d0;
+    border-left: 4px solid #1e62d0;
+    padding-left: 12px;
+    margin-top: 2em;
+}
+
+main h3, main h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e62d0;
+    margin: 1.5em 0 0.8em;
+}
+
+main h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1e62d0;
+    margin: 1.5em 0 0.8em;
+}
+
+/* 表格样式优化：紧凑 + 居中 + 美观 */
+table {
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    background-color: #fff;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 优化头像显示 */
+table td img {
+    border-radius: 50%; /* 头像圆形 */
+    width: 32px;  /* 设置头像大小 */
+    height: 32px; /* 保持头像比例 */
+    margin-right: 12px; /* 头像与昵称之间添加间距 */
+    vertical-align: middle; /* 头像和文字垂直居中对齐 */
+}
+
+/* 调整表格单元格内容的对齐 */
+table td {
+    text-align: left; /* 让文字靠左对齐，更好地与头像搭配 */
 }
