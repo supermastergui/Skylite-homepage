@@ -1,0 +1,619 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>简翼模拟飞行平台管制员培训条例</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='简翼模拟飞行平台管制员培训条例-v10'><span>简翼模拟飞行平台管制员培训条例 v1.0</span></h1><p><span>发行日期：2025年7月23日</span></p><p><span>文件编号：SKYLITE-CTD-202501-R2-SC</span></p><p>&nbsp;</p><h2 id='前言'><span>前言</span></h2><p><span>欢迎来到Skylite·简翼模拟飞行平台！</span></p><p><span>简翼模拟飞行平台致力于为广大飞行爱好者，特别是模拟飞行新手，提供一个真实、规范且易于上手的联飞环境本平台由星核科技（桂林）有限公司主导运营。</span></p><p><span>本手册是您成为平台管制员的清晰指南与核心依据。</span></p><p><span>无论您是刚开始接触管制的新手学员，还是希望提升技能的进阶成员，本条例都为您指明了从观察员起步，到晋升塔台、进近、区域管制员乃至教员的完整路径。</span></p><ul><li><p><span>明确目标：了解每一级晋升需要掌握的知识（航图、气象、对话规范）和技能（情景意识、操作软件）。</span></p></li><li><p><span>知道学什么：您的教员在下一节课将讲解什么内容？本条例中对应的章节都有明确要求。</span></p></li><li><p><span>理解流程：熟悉语音面试、Sweatbox 考核、活动监管等关键步骤的标准。</span></p></li></ul><p><span>遵循指引、熟悉流程、尊重规则，是您顺利通过考核、安全高效服务的基础。</span>
+<span>我们期待在虚拟蓝天之上，见证您的成长！</span></p><p>&nbsp;</p><h2 id='修订记录'><span>修订记录</span></h2><figure class='table-figure'><table><thead><tr><th><span>版本</span></th><th><span>时间</span></th><th><span>编者</span></th><th><span>描述</span></th></tr></thead><tbody><tr><td><span>0.1</span></td><td><span>2025.05.22</span></td><td><span>2352</span></td><td><span>初版</span></td></tr><tr><td><span>1.0</span></td><td><span>2025.07.09</span></td><td><span>2352、5516</span></td><td><span>重构、增加内容</span></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='总则'><span>总则</span></h2><h3 id='1-总则'><span>1 总则</span></h3><p><span>1.1 每位管制员应将本手册的总则部分视为记忆内容，成为管制前务必查看。</span></p><p><span>1.2 本条例适用于平台内所有管制员，旨在提升管制员专业素养与应急处理能力。</span></p><p><span>1.3 本手册自发布起即刻生效，所有考核与晋升内容以此文件为依据，前序相关文件一律废止。</span></p><p><span>1.4 本规则会根据平台情况适时调整，请关注最新培训要求。</span></p><p><span>1.5 本规则最终解释权归Skylite平台行政管理组所有，任何疑问请及时反馈。</span></p><p><span>1.6 有任意两名教员或一名教员与教师在场的情况下，可不进行录音，保护学员隐私。</span></p><p>&nbsp;</p><h3 id='2-管制员行为规范'><span>2 管制员行为规范</span></h3><p><span>2.1 尊重每一个人：如果该管制员在训练过程中有对教员、飞行员或任何平台成员有不尊重或不文明的行为，就可能根据其严重程度，终止本次训练、甚至取消训练资格。</span></p><p><span>2.2 适用基本常识：阅读和使用本手册里各种规则时，请记住，在本手册中，基本常识永远适用。</span></p><p><span>2.3 准时参与：请教员/学员准时参与互相约定的时间，若临时有事，需提前告知。</span></p><p><span>2.4 提前作出准备：不要在面试、考核等活动开始后才翻阅理论资料。</span></p><p><span>2.5 先观摩和学习：新人管制员，在初次来到此区域前，必须进行观摩或学习该区域的规定等。</span></p><p><span>2.6 正确的呼号连接：当观察员的形式连接服务器时，必须以“呼号_OBS”的形式进行连接，例如：5516_OBS。Skylite的职员在表明身份后，可以其他名称连接，例如：SKYLITECTD、5516_SUP、SKYLITE1A等。</span></p><p><span>2.7 管制员不得多开：任何管制员上线的管制席位仅在同一时间段使用1个连接，例如：同时以管制员的1个连接和同时以机组的1个连接，这是不允许的。但同时以OBS的1个连接和时以机组的1个连接，这是合规的。</span></p><p><span>2.8 管制员不得挂机：任何管制员不得在管制过程中进行挂机。（请不要钻本规则的漏洞，参考2.2）</span></p><p><span>2.7 正确的席位名称：管制员仅允许以“呼号_席位代号”的形式连接，且仅允许连接以下席位：</span></p><ul><li><p><span>DEL - 放行</span></p></li><li><p><span>RMP – 机坪（可用“A_GND”替代）</span></p></li><li><p><span>GND - 地面</span></p></li><li><p><span>TWR - 塔台</span></p></li><li><p><span>DEP - 离场</span></p></li><li><p><span>APP - 进近</span></p></li><li><p><span>CTR - 区域</span></p></li><li><p><span>FSS - 飞行服务站</span></p></li></ul><p><span>2.8 遵循视程距离规定：</span></p><figure class='table-figure'><table><thead><tr><th><span>席位</span></th><th><span>距离</span></th></tr></thead><tbody><tr><td><span>OBS</span></td><td><span>≤ 300 nm</span></td></tr><tr><td><span>DEL/GND</span></td><td><span>≤ 20 nm</span></td></tr><tr><td><span>TWR</span></td><td><span>≤ 50 nm</span></td></tr><tr><td><span>APP/DEP</span></td><td><span>≤ 150 nm</span></td></tr><tr><td><span>CTR</span></td><td><span>≤ 600 nm</span></td></tr><tr><td><span>FSS</span></td><td><span>≤ 1500 nm</span></td></tr></tbody></table></figure><p><span>2.9 先到先得：管制员连接时遵循“先到先得”原则，席位预定同理。由于不能上相同的席位。因此，若上一位管制在到达预定时间后还在“霸占席位”，不作出任何换班/交接等行为，则必须在5分钟内交接并断开连接。</span></p><p><span>2.10 遵守规定：客座管制员必须遵守Skylite平台的规则以及程序。</span></p><p><span>2.11 在其他平台接受训练的管制员，若以客座管制员（权限平移）方式加入平台，则后续管制员培训不由本平台进行。</span></p><p><span>2.12 仅允许以下平台的管制员通过客座管制员的身份加入本平台</span></p><ul><li><p><span>Vatprc（其他Vatsim分部的管制，视情况平移）</span></p></li><li><p><span>Xflysim</span></p></li><li><p><span>Chinaflier</span></p></li><li><p><span>Sino</span></p></li></ul><p>&nbsp;</p><h3 id='3-训练规定'><span>3 训练规定</span></h3><p><span>3.1 Sweatbox 考核：</span></p><p><span>	</span><span>3.1.1 Sweatbox 文本符合本手册要求的架次。</span></p><p><span>	</span><span>3.1.2 Sweatbox 考核在Teamspeak 语音频道进行。</span></p><p><span>	</span><span>3.1.3 学员在有条件的情况下，需录制Playback 文件。（最好录制视频，用于了解学员的操作）</span></p><p><span>3.2 主带教员对考核结果有最大和最终裁决权限。</span></p><p><span>3.3 如学员由于学习能力等其他原因，Sweatbox 训练超过8次且主带教员主观认为不适合继续进行下去的，可由主带教员提出，教员团投票，一致通过的可作劝退处理。</span></p><p><span>3.3 教员必须有相应资格，必须满足以下要求：</span></p><p><span>	</span><span>a. 14 周岁及以上</span></p><p><span>	</span><span>b. 由管制员训练中心批准</span></p><p><span>	</span><span>c. 拥有该管制室对应的执照</span></p><p><span>3.4 教员对非结果性决策拥有最终决定权：例如：在ZSPD机场和ZSSS机场之间的Sweatbox文本，只要满足本手册3.1.1 的要求，可以任意决定。</span></p><p>&nbsp;</p><h3 id='4-定义'><span>4 定义</span></h3><p><span>Sweatbox  -  箱子、模拟机。用于对管制员进行训练的手段，通常由操控端和训练端组成。</span></p><p><span>向下兼容(Topdown)  -  一种管制的运行模式。平台提倡在尽可能的情况下其用该模式以覆盖多机场的管制。</span></p><p><span>学员(Under Mentoring)  -  正在学习管制的人员。</span></p><p><span>教员(Instructor)  -  教授学员的人员且可以负责考核的人员。</span></p><p><span>教师(Mentor)  -  教授学员的人员但不可以负责考核的人员。</span></p><p>&nbsp;</p><h3 id='5-附件'><span>5 附件</span></h3><h4 id='51-管制权限对照表'><span>5.1 管制权限对照表</span></h4><figure class='table-figure'><table><thead><tr><th><span>权限中文名</span></th><th><span>英语全称</span></th><th><span>缩写</span></th><th><span>管制范围</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><span>观察员</span></td><td><span>Observer</span></td><td><span>OBS</span></td><td>&nbsp;</td><td><span>仅能进行观察</span></td></tr><tr><td><span>塔台管制员</span><br /><span>（见习）</span></td><td><span>Student 1 Under Mentoring</span></td><td><span>S1 UM、S1 见习</span></td><td><span>GND/DEL</span><br /><span>Ground/Delivery</span><br /><span>（地面/放行）</span></td><td>&nbsp;</td></tr><tr><td><span>塔台管制员</span><br /><span>（正式）</span></td><td><span>Student 1</span></td><td><span>S1</span></td><td><span>GND/DEL</span><br /><span>Ground/Delivery</span><br /><span>（地面/放行）</span></td><td>&nbsp;</td></tr><tr><td><span>塔台管制员</span><br /><span>（资深）</span></td><td><span>Student 2</span></td><td><span>S2</span></td><td><span>TWR</span><br /><span>Tower</span><br /><span>（塔台）</span></td><td>&nbsp;</td></tr><tr><td><span>非雷达管制员</span></td><td><span>Tier 2</span></td><td><span>T2</span></td><td><span>Procedural</span><br /><span>Tower</span><br /><span>（塔台）</span></td><td>&nbsp;</td></tr><tr><td><span>进近管制员</span><br /><span>（见习）</span></td><td><span>Student 3 Under Mentoring</span></td><td><span>S3 UM、S3 见习</span></td><td><span>TMA</span><br /><span>Termina Control Area</span><br /><span>（终端）</span></td><td>&nbsp;</td></tr><tr><td><span>进近管制员</span><br /><span>（正式）</span></td><td><span>Student 3</span></td><td><span>S3</span></td><td><span>TMA</span><br /><span>Termina Control Area</span><br /><span>（终端）</span></td><td>&nbsp;</td></tr><tr><td><span>区域管制员</span><br /><span>（见习）</span></td><td><span>Control 1</span><br/><span>Under Mentoring</span></td><td><span>C1 UM、C1 见习</span></td><td><span>ACC</span><br /><span>Area Control Centre</span><br /><span>（区域管制中心）</span></td><td>&nbsp;</td></tr><tr><td><span>区域管制员</span><br /><span>（正式）</span></td><td><span>Control 1</span></td><td><span>C1</span></td><td><span>ACC</span><br /><span>Area Control Centre</span><br /><span>（区域管制中心）</span></td><td>&nbsp;</td></tr><tr><td><span>区域管制员</span><br /><span>（弃用）</span></td><td><span>Control 2</span><br/><span>（弃用）</span></td><td><span>C2</span><br/><span>（弃用）</span></td><td>&nbsp;</td><td><span>弃用</span></td></tr><tr><td><span>区域管制员</span><br /><span>（资深）</span></td><td><span>Control 3</span></td><td><span>ACC</span><br/><span>Area Control centre</span><br/><span>（区域管制中心）</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td><span>塔台教员</span></td><td><span>Instructor 1</span></td><td><span>I1</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td><span>进近教员</span></td><td><span>Instructor 2</span></td><td><span>I2</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td><span>区域教员</span></td><td><span>Instructor 3</span></td><td><span>I3</span></td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='52-管制室晋升示意图'><span>5.2 管制室晋升示意图</span></h4><p><img src="./Sketch-map.png" referrerpolicy="no-referrer" alt="管制员流程图"></p><p>&nbsp;</p><h4 id='53-平台架构示意图'><span>5.3 平台架构示意图</span></h4><p><img src="./Management-structure.png" referrerpolicy="no-referrer" alt="管理部"></p><p>&nbsp;</p><h2 id='第一章-塔台管制员'><span>第一章 塔台管制员</span></h2><p><span>塔台管制是指挥机组从五边截盲降、跑道起飞的IFR 机组，到本场飞行的VFR机组。从放行、机坪、地面开始，一步步晋升到塔台。</span></p><p>&nbsp;</p><h3 id='总则-2'><span>总则</span></h3><h4 id='准入条件'><span>准入条件</span></h4><ul><li><p><span>拥有对管制工作的热爱</span></p></li><li><p><span>注册满48小时、连飞时长 &gt; 4小时（Vatsim小时数 &gt; 50小时）</span></p></li><li><p><span>机组的中英文陆空能力</span></p></li><li><p><span>了解管制员的规章制度</span></p></li><li><p><span>简单的Metar报文解读能力</span></p></li><li><p><span>eAIP航图识读能力</span></p></li><li><p><span>了解RVSM高度层</span></p></li><li><p><span>了解飞行情报区及空域的运行规范</span></p></li></ul><p>&nbsp;</p><h4 id='理论训练'><span>理论训练</span></h4><ul><li><p><span>管制晋升流程</span></p></li><li><p><span>SOP、Loa 的概念和内容</span></p></li><li><p><span>TL、TA、TH 和高度表拨正程序</span></p></li><li><p><span>航空器设备码和分类标准</span></p></li><li><p><span>席位之间的配合</span></p></li><li><p><span>中英陆空对话</span></p></li><li><p><span>航空器优先级</span></p></li><li><p><span>平行跑道运行模式</span></p></li></ul><p>&nbsp;</p><h4 id='sweatbox-训练'><span>Sweatbox 训练</span></h4><p><span>塔台Sweatbox 训练次数为</span><strong><span>3~8 次</span></strong><span>。</span></p><ul><li><p><span>EuroScope 的基本使用办法</span></p></li><li><p><span>跑道的开启方式</span></p></li><li><p><span>各席位的协调办法</span></p></li><li><p><span>飞行计划的检查</span></p></li><li><p><span>标牌的及时标记</span></p></li><li><p><span>注意力的合理分配</span></p></li><li><p><span>流量控制的办法</span></p></li></ul><p>&nbsp;</p><h3 id='student-1-under-mentoring'><span>Student 1 Under Mentoring</span></h3><h4 id='s1-under-mentoring-sweatbox-考核标准'><span>S1 Under Mentoring Sweatbox 考核标准</span></h4><ul><li><p><span>陆空对话高效、科学</span></p></li><li><p><span>放行效率不低于15 架/小时（7.5 架/半小时）</span></p></li><li><p><span>机组计划及时检查出错误</span></p></li><li><p><span>滑行机组不出现对头、危险接近等情况</span></p></li><li><p><span>良好的职业操守</span></p></li><li><p><span>有一定抗压能力</span></p></li></ul><p>&nbsp;</p><h4 id='s1-under-mentoring-授予标准'><span>S1 Under Mentoring 授予标准</span></h4><ul><li><p><span>通过理论考核</span></p></li><li><p><span>参与至少3 场Sweatbox 训练</span></p></li><li><p><span>通过Sweatbox 训练</span></p></li></ul><p><span>注：Student 1 Under Mentoring 权限不需要在线训练。</span></p><p>&nbsp;</p><h3 id='student-1'><span>Student 1</span></h3><h4 id='s1-在线训练考核标准'><span>S1 在线训练考核标准</span></h4><ul><li><p><span>同时担任塔台、地面、机坪、放行席位</span></p></li><li><p><span>上级进近必须在线</span></p></li><li><p><span>连续在线时长不得低于半小时</span></p></li><li><p><span>无违反“S1 Under Mentoring Sweatbox 考核标准”的行为（机组数量问题引起的效率问题除外）</span></p></li><li><p><span>经教员投票合格</span></p></li></ul><p>&nbsp;</p><h4 id='s1-授予标准'><span>S1 授予标准</span></h4><ul><li><p><span>获得“Student 1 Under Mentoring 塔台管制员（见习）”管制权限</span></p></li><li><p><span>通过S1 在线训练考核</span></p></li></ul><p><span>注：Student 1 权限不需要Sweatbox 考核。</span></p><p>&nbsp;</p><h3 id='student-2'><span>Student 2</span></h3><h4 id='s2-授予标准'><span>S2 授予标准</span></h4><ul><li><p><span>获得“Student 1 塔台管制员（正式）”管制权限</span></p></li><li><p><span>上管时长达到2 小时</span></p></li></ul><p>&nbsp;</p><h2 id='第二章-程序管制'><span>第二章 程序管制</span></h2><h3 id='准入条件-2'><span>准入条件</span></h3><ul><li><p><span>获得“Student 2 塔台管制员（资深）”管制权限</span></p></li></ul><p>&nbsp;</p><h3 id='理论训练-2'><span>理论训练</span></h3><ul><li><p><span>一次雷达和二次雷达</span></p></li><li><p><span>QNH 和QFE</span></p></li><li><p><span>潜在冲突解决能力的培养</span></p></li><li><p><span>等待程序和堆叠程序</span></p></li><li><p><span>传统程序的运行方式（如：VOR、DME 等）</span></p></li><li><p><span>进近方式的差异和选择</span></p></li><li><p><span>阶梯下高</span></p></li><li><p><span>非雷达管制的程序标准</span></p></li></ul><p>&nbsp;</p><h3 id='sweatbox-训练-2'><span>Sweatbox 训练</span></h3><p><span>训练方式采用雷达监管下的程序管制，应 </span><strong><span>2 &lt; 训练次数 &lt; 5</span></strong></p><ul><li><p><span>标牌的标记方法</span></p></li><li><p><span>应急情况的处理</span></p></li><li><p><span>排序间隔的处理</span></p></li><li><p><span>时间汇报的时机及下一步动作</span></p></li></ul><p>&nbsp;</p><h3 id='授予标准'><span>授予标准</span></h3><ul><li><p><span>通过理论考核</span></p></li><li><p><span>通过Sweatbox 考核</span></p></li></ul><p><span>注：Tier2 权限不需要在线训练。</span></p><p>&nbsp;</p><h2 id='第三章-进近管制员'><span>第三章 进近管制员</span></h2><p><span>进近管制员管理着机场和航路区飞机的进进出出，依靠无线电话和雷达管理航空器。管制范围上接航路区，下接机场管制区。</span></p><p>&nbsp;</p><h3 id='总则-3'><span>总则</span></h3><h4 id='准入条件-3'><span>准入条件</span></h4><ul><li><p><span>获得“Student 2 塔台管制员（资深）”管制权限</span></p></li></ul><p>&nbsp;</p><h4 id='理论训练-3'><span>理论训练</span></h4><ul><li><p><span>MSA和MVA的概念</span></p></li><li><p><span>进近标牌的使用</span></p></li><li><p><span>雷达识别的使用</span></p></li><li><p><span>应答机识别的使用</span></p></li><li><p><span>NOTAM的查阅</span></p></li><li><p><span>截获航向道的注意事项</span></p></li><li><p><span>PMS的概念</span></p></li><li><p><span>目视间隔的概念</span></p></li><li><p><span>航空器在空中的性能差别</span></p></li></ul><p>&nbsp;</p><h4 id='sweatbox-训练-3'><span>Sweatbox 训练</span></h4><p><span>训练方式采用循序渐进的模式，由小流量逐步增加至大流量，应</span><strong><span>不少于3 次</span></strong><span>。</span></p><ul><li><p><span>移交的时机处理</span></p></li><li><p><span>间隔的调配</span></p></li><li><p><span>雷达引导的试用和时机</span></p></li><li><p><span>盘旋等待的使用时机</span></p></li><li><p><span>阶梯下高的实际运用</span></p></li><li><p><span>良好的宏观意识</span></p></li><li><p><span>航空器高度规避和速度调配</span></p></li></ul><p>&nbsp;</p><h3 id='student-3-under-mentoring'><span>Student 3 Under Mentoring</span></h3><h4 id='s3-under-mentoring-sweatbox考核标准'><span>S3 Under Mentoring Sweatbox考核标准</span></h4><p><span>Sweatbox文本应含有进离场航空器，10~12架次</span></p><ul><li><p><span>充分利用雷达引导</span></p></li><li><p><span>满足最低水平及垂直间隔要求</span></p></li><li><p><span>充分利用机场周围的空域</span></p></li><li><p><span>不引导航空器进入危险区等空域</span></p></li><li><p><span>不出现机组飞行在过渡夹层（空间）中</span></p></li><li><p><span>不出现耗时间的方式使机组降落</span></p></li><li><p><span>不出现对头、危险接近等情况</span></p></li><li><p><span>良好的职业操守</span></p></li><li><p><span>有一定抗压能力</span></p></li></ul><p><span> </span></p><h4 id='s3-under-mentoring授予标准'><span>S3 Under Mentoring授予标准</span></h4><ul><li><p><span>通过理论考核</span></p></li><li><p><span>参与至少3场Sweatbox训练</span></p></li><li><p><span>通过Sweatbox训练</span></p></li></ul><p><span>注：Student 3 Under Mentoring权限不需要在线训练。</span></p><p><span> </span></p><h3 id='student-3'><strong><span>Student 3</span></strong></h3><h4 id='s3-在线训练-考核标准'><span>S3 在线训练 考核标准</span></h4><ul><li><p><span>担任雷达空域机场的进近席位</span></p></li><li><p><span>上级区域、下级塔台必须在线</span></p></li><li><p><span>连续在线时长不得低于半小时</span></p></li><li><p><span>无违反“S3 Under Mentoring Sweatbox考核标准”的行为（机组数量问题引起的效率问题除外）</span></p></li><li><p><span>经教员投票合格</span></p></li></ul><p><span> </span></p><h4 id='s3-授予标准'><span>S3 授予标准</span></h4><ul><li><p><span>获得“Student 3 Under Mentoring 进近管制员（见习）”管制权限</span></p></li><li><p><span>通过S3在线训练考核</span></p></li></ul><p><span>注：Student 3权限不需要Sweatbox考核。</span></p><p>&nbsp;</p><h1 id='第四章-区域管制员'><span>第四章 区域管制员</span></h1><h2 id='总则-4'><span>总则</span></h2><h3 id='准入条件-4'><span>准入条件</span></h3><ul><li><p><span>获得“Tier 2 非雷达管制员”管制权限</span></p></li><li><p><span>获得“Student 3 进近管制员（正式）”管制权限</span></p></li></ul><p><span> </span></p><h3 id='理论训练-4'><span>理论训练</span></h3><ul><li><p><span>MEA、MORA的概念</span></p></li><li><p><span>常见机型的速度范围</span></p></li><li><p><span>空速和马赫数的合理使用时机</span></p></li><li><p><span>向其他席位移交的时机</span></p></li><li><p><span>偏置等避免冲突方案</span></p></li><li><p><span>LID的分发时机和协调方案</span></p></li><li><p><span>无计划飞机的处置</span></p></li></ul><p><span> </span></p><h3 id='sweatbox-训练-4'><span>Sweatbox 训练</span></h3><p><span>区域Sweatbox训练次数为</span><strong><span>1~5次</span></strong><span>。</span></p><ul><li><p><span>移交的时机处理</span></p></li><li><p><span>间隔的调配</span></p></li><li><p><span>雷达引导的试用和时机</span></p></li><li><p><span>盘旋等待的使用时机</span></p></li><li><p><span>阶梯下高的实际运用</span></p></li><li><p><span>良好的宏观意识</span></p></li><li><p><span>航空器高度规避和速度调配</span></p></li></ul><p>&nbsp;</p><h2 id='control-1-under-mentoring'><span>Control 1 Under Mentoring</span></h2><h3 id='c1-under-mentoring-sweatbox考核标准'><span>C1 Under Mentoring Sweatbox考核标准</span></h3><p><span>Sweatbox文本应含有对向含有潜在冲突的航空器，</span><strong><span>10~12架次</span></strong></p><ul><li><p><span>及时进行雷达引导或偏置解决潜在危险</span></p></li><li><p><span>满足最低水平及垂直间隔要求</span></p></li><li><p><span>充分利用周围的空域</span></p></li><li><p><span>不引导航空器进入危险区等空域</span></p></li><li><p><span>不出现对头、危险接近等情况</span></p></li><li><p><span>良好的职业操守</span></p></li><li><p><span>有一定抗压能力</span></p></li></ul><p><span> </span></p><h3 id='control-1-under-mentoring-授予标准'><span>Control 1 Under Mentoring 授予标准</span></h3><ul><li><p><span>通过理论考核</span></p></li><li><p><span>参与至少1场Sweatbox训练</span></p></li><li><p><span>通过Sweatbox考核</span></p></li></ul><p><span>注：Control 1 Under Mentoring权限不需要在线训练。</span></p><p><span> </span></p><h2 id='control-1'><span>Control 1</span></h2><h3 id='c1-在线训练-考核标准'><span>C1 在线训练 考核标准</span></h3><ul><li><p><span>担任区域，且Topdown至少一个机场</span></p></li><li><p><span>下级其他任意机场的进近必须在线</span></p></li><li><p><span>连续在线时长不得低于半小时</span></p></li><li><p><span>无违反“Control 1 Under Mentoring Sweatbox考核标准”的行为（机组数量问题引起的效率问题除外）</span></p></li><li><p><span>经教员投票合格</span></p></li></ul><p><span> </span></p><h3 id='c1-授予标准'><span>C1 授予标准</span></h3><ul><li><p><span>获得“Control 1 Under Mentoring 塔台管制员（见习）”管制权限</span></p></li><li><p><span>通过C1在线训练考核</span></p></li></ul><p><span>注：Control 1权限不需要Sweatbox考核。</span></p><p><span> </span></p><h2 id='control-3'><span>Control 3</span></h2><h3 id='c3授予标准'><span>C3授予标准</span></h3><ul><li><p><span>获得“Control 1塔台管制员（正式）”管制权限</span></p></li><li><p><span>上管时长达到5小时</span></p></li></ul><p>&nbsp;</p><h1 id='第五章-管制教员'><span>第五章 管制教员</span></h1><p><span>未完待续</span></p><p>&nbsp;</p><h1 id='参考资料'><span>参考资料</span></h1><p><span>[1] </span><a href='https://cdn.vatsim.net/policy-documents/GCAP_v1.1_Release.pdf'><span>Globa- Controller Administration Policy (GCAP)</span></a></p><p><span>[2] </span><a href='https://vats.im/designated-positions'><span>Vatsim特殊席位表</span></a></p><p><span>[3] </span><a href='https://baike.baidu.com/item/进近管制员/15416825'><span>进近管制员百度百科</span></a></p><p><span>[4] </span><a href='https://moodle.vatprc.net/course/index.php'><span>VATPRC管制员课程</span></a></p></div></div>
+</body>
+</html>

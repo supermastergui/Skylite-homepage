@@ -10,7 +10,9 @@
 	<!-- Cookie Consent Banner -->
 	<div id="cookie-consent" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:999;background:rgba(255,255,255,0.98);box-shadow:0 -2px 12px rgba(0,0,0,0.08);padding:18px 0;text-align:center;">
 		<span style="color:#333;font-size:1rem;">
-			本网站使用Cookie以提升用户体验。继续浏览即表示您同意我们的 <a href="#" style="color:#1e62d0;text-decoration:underline;">Cookie政策</a>。
+										本网站使用Cookie以提升用户体验。继续浏览即表示您同意我们的 <a href="../policy/"  target="_blank" rel="noopener noreferrer" style="color:#1e62d0;text-decoration:underline;">Cookie政策</a>。
+
+
 		</span>
 		<button id="cookie-accept-btn" style="margin-left:24px;padding:6px 22px;font-size:1rem;color:#fff;background:#1e62d0;border:none;border-radius:18px;cursor:pointer;">同意</button>
 	</div>
@@ -19,15 +21,15 @@
 		<img src="../img/Skylite_Portrait 3.png" alt="Logo">
 			<a href="../index.html">主页</a>
 		<div class="dropdown">
-			<a href="#">关于我们</a>
+			<a href="../About-us/">关于我们</a>
 			<div class="dropdown-content">
-				<a href="../Social_media/index.html"">官方社媒</a>
+				<a href="../Social-media/index.html"">官方社媒</a>
 				<a href="../meeting/"">会议记录</a>
 				<a href="../staff/"">职员</a>
 				<a href="../Skylite_Logo.7z" target="_blank" rel="noopener noreferrer">Logo下载</a>
 				<a href="https://pilot.skylitefly.com/ActivityList" target="_blank" rel="noopener noreferrer">活动</a>
 				<hr class="navbar-divider">
-				<a href="#"">Cookie协议</a>
+				<a href="../policy/"">协议</a>
 			</div>
 		</div>
 		<div class="dropdown">
@@ -46,13 +48,13 @@
 			<div class="dropdown-content">
 				<a href="https://www.eaipchina.cn/" target="_blank" rel="noopener noreferrer">航图</a>
 				<a href="../weather/index.html">气象</a>
-				<a href="#">连飞软件下载</a>
+				<a href="../Software/">连飞软件下载</a>
 			</div>
 		</div><div class="dropdown">
 			<a href="#">管制员</a>
 			<div class="dropdown-content">
 				<a href="#">(开发中)管制员中心</a>
-				<a href="#">成为管制员</a>
+				<a href="../Become-a-controller/">成为管制员</a>
 				<a href="https://skylitefly.feishu.cn/sheets/UDZssElIphLd5itygBIcD2xGn6c" target="_blank" rel="noopener noreferrer">管制员列表</a>
 				<a href="../Sector/index.html">扇区文件</a>
 			</div>
@@ -61,43 +63,47 @@
 	<hr class="navbar-divider">
 	
 	<main>
-			<h1>
-				官方社媒
-			</h1>
-            
-            <h2>QQ群聊</h2>
-            <p>
-                Skylite 连飞群  -  <a href="https://qm.qq.com/q/ib6CewJj9e" target="_blank" rel="noopener noreferrer">1041264930</a>
-            </p>
-
-            <br>
-            <hr>
-            <br>
-            
-            <h2>Bilibili账号</h2>
-            <p>
-                SKYLITE简翼飞行  -  UID：<a href="https://space.bilibili.com/3546862944520868" target="_blank" rel="noopener noreferrer">3546862944520868</a>
-            </p>
-
-            <br>
-            <hr>
-            <br>
-
-            <h2>
-                TeamSpeak服务器
-            </h2>
-            <p>
-                Skylite TeamSpeak服务器：
-                <li>服务器  -  <a href="ts3server://ts.skylitefly.com" target="_blank" rel="noopener noreferrer">ts.skylitefly.com</a></li>
-                <li>昵称 - <a href="https://pilot.skylitefly.com/Register" target="_blank" rel="noopener noreferrer">pilot.skylitefly.com</a>，注册的呼号</li>
-                <li>密码 - N/A</li>
+			<h1>关于我们</h1>
+            <p style="font-size: 300%; text-align: center;">
+                >_< 开发中，敬请期待！<br>
             </p>
 	</main>
 
 	
 
 	<footer class="ICP">
-		<a href="#">关于我们</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://space.bilibili.com/3546862944520868">社交媒体</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://qm.qq.com/q/ib6CewJj9e">加入我们</a>&nbsp;&nbsp; | &nbsp;&nbsp;Copyright © 2025 Skylite Development Team. All rights reserved.&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://beian.miit.gov.cn/">桂ICP备2025057216号-1</a>&nbsp;&nbsp; | &nbsp;&nbsp;仅供模拟飞行使用
+		<a href="../About-us/">关于我们</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://space.bilibili.com/3546862944520868">社交媒体</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://qm.qq.com/q/ib6CewJj9e">加入我们</a>&nbsp;&nbsp; | &nbsp;&nbsp;Copyright © 2025 Skylite Development Team. All rights reserved.&nbsp;&nbsp; | &nbsp;&nbsp;<a href="https://beian.miit.gov.cn/">桂ICP备2025057216号-1</a>&nbsp;&nbsp; | &nbsp;&nbsp;仅供模拟飞行使用
 	</footer>
 </body>
+<script>
+// Cookie Consent Logic
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${value};expires=${d.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+    const arr = document.cookie.split(';');
+    for (let i = 0; i < arr.length; i++) {
+        let c = arr[i].trim();
+        if (c.indexOf(name + "=") === 0) return c.substring(name.length + 1);
+    }
+    return null; // 返回 null 而不是空字符串
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+    if (!getCookie('cookie_consent')) {
+        document.getElementById('cookie-consent').style.display = 'block';
+    }
+    
+    const acceptBtn = document.getElementById('cookie-accept-btn');
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+            setCookie('cookie_consent', '1', 365);
+            document.getElementById('cookie-consent').style.display = 'none';
+        });
+    }
+});
+</script>
 </html>
